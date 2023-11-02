@@ -17,6 +17,5 @@ int print_string(const char *format, va_list arg)
 	{
 		_putchar(s[i]);
 	}
-	_putchar('\0');
 	return (i);
 }
