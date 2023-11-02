@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include "main.h"
 /**
  * print_int- prints a signed integer.
  * @a: the variable that holds integers until they are printed.
