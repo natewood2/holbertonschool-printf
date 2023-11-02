@@ -2,11 +2,15 @@
 #include <stdio.h>
 /**
  * print_char -- prints a char, subfunction of printf
- * @temp: void pointer passed to be printed
- *
- * Return: returns nothing
+ * @format: the format specifier
+ * @arg: va_list containing the arguments
+ * Return: 1
  */
-void print_char(void *temp)
+
+int print_char(const char *format, va_list arg)
 {
-	putchar(*(char *)temp);
+	char c = va_args(args, int);
+
+	_putchar(c);
+	return (1);
 }

@@ -1,26 +1,25 @@
 #include "main.h"
 
 /**
- * get_funct - get the function
- * @s: input value
- * Return: void
+ * get_funct - Retrieve function pointer based on a format specifier character.
+ * @s: The input character representing the desired format specifier.
+ * Return: a function pointer that corresponds to the format
 */
 
-void (*get_funct(char *s))(void *)
+int (*get_funct(const char *s))(const char *format, va_list arg)
 {
-	int i;
+	int i = 0;
+
 	my_printf p[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
 		{"d", get_int},
-		{"i", print_unsigned_int},
+		{"i", get_unsigned_int},
 		{NULL, NULL}
 	};
 
-	i++
-
-	while (my_printf[i].op != NULL && *(my_printf[i].op) != *s)
+	while ((p[i].op[0]) != s[0])
 		i++;
-	return (my_print[i].f);
+	return (p[i].f);
 }
