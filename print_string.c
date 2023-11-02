@@ -1,18 +1,22 @@
 #include "main.h"
 /**
  * print_string -- prints a string; subfunction of printf
- * @temp: void pointer to be printed
- *
- * Return: nothing
+ * @format: placeholder for format
+ * @arg: va_list containing the arguments
+ * Return: number of characters printed
  */
-void print_string(void *temp)
+
+int print_string(const char *format, va_list arg)
 {
 	int i;
-	char *string_holder;
+	char *s;
 
-	string_holder = (char *)temp;
-	for (i = 0; string_holder[i] != '\0'; i++)
+	s = va_arg(arg, char *);
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		print_char(string_holder[i]);
+		_putchar(s[i]);
 	}
+	_putchar('\0');
+	return (i);
 }
