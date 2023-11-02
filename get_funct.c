@@ -18,11 +18,9 @@ void (*get_funct(char *s))(void *)
 		{NULL, NULL}
 	};
 
-	i++
-
 	while (my_printf[i].op != NULL && *(my_printf[i].op) != *s)
 	{
 		i++;
 	}
-	return (my_print[i].f);
+	return (my_printf[i].f);
 }
