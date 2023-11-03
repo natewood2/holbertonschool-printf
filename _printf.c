@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 				result += op(format, arg);
 			}
 		}
+		else if (*format == '%' && *(1 + format) == '\0')
+		{
+			return (-1);
+		}
 		else
 		{
 			_putchar(*format);
