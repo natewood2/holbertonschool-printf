@@ -9,8 +9,15 @@
 
 int print_char(const char *format, va_list arg)
 {
-	char c = va_args(args, int);
+	char c = va_arg(arg, int);
 
-	_putchar(c);
-	return (1);
+	if (*format != 0)
+	{
+		_putchar(c);
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
