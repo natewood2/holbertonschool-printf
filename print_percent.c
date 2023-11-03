@@ -16,6 +16,7 @@ int print_percent(const char *format, va_list arg)
 	}
 	else
 	{
+		va_arg(arg, char *);
 		return (0);
 	}
 }
