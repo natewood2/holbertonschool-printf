@@ -8,7 +8,7 @@
 
 int (*get_funct(const char *s))(const char *format, va_list arg)
 {
-	int i = 0;
+	int i, size;
 
 	my_printf p[] = {
 		{"c", print_char},
@@ -16,10 +16,13 @@ int (*get_funct(const char *s))(const char *format, va_list arg)
 		{"%", print_percent},
 		{"d", get_int},
 		{"i", get_unsigned_int},
-		{NULL, NULL}
+		{"0", NULL}
 	};
 
-	while ((p[i].op[0]) != s[0])
+	i = 0;
+	size = 5;
+
+	while ((p[i].op[0]) != s[0] && i < size)
 		i++;
 	return (p[i].f);
 }

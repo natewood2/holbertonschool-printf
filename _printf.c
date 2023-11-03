@@ -30,6 +30,11 @@ int _printf(const char *format, ...)
 				result += op(format, arg);
 			}
 		}
+		else if (op == NULL)
+		{
+			format++;
+			continue;
+		}
 		else
 		{
 			_putchar(*format);
