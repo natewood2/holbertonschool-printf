@@ -4,12 +4,15 @@
 /**
  * _printf - prints stuff
  * @format: format specifier and/or string to be printed
- * @arg: variable amount of variables to be printed
- * Return: nothing is void
+ * @...: variable amount of variables to be printed
+ * Return: amount of bytes printed
  */
-void _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int (*op)(const char *format, va_list arg);
+	int result;
+
+	result = 0;
 	va_list(arg);
 	va_start(arg, format);
 	if (format == NULL)
@@ -24,15 +27,17 @@ void _printf(const char *format, ...)
 			op = get_funct(format);
 			if (op != NULL)
 			{
-				op(format, arg);
+				result += op(format, arg);
 			}
 		}
 		else
 		{
 			_putchar(*format);
+			result++;
 		}
 		format++;
 	}
 	_putchar('\n');
 	va_end(arg);
+	return (result);
 }

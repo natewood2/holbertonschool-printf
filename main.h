@@ -15,7 +15,7 @@ int print_unsigned_int(unsigned int n, unsigned int count);
 int (*get_funct(const char *s))(const char *format, va_list arg);
 int get_int(const char *format, va_list arg);
 int get_unsigned_int(const char *format, va_list arg);
-void _printf(const char *format, ...);
+int _printf(const char *format, ...);
 int _putchar(char c);
 
 /**

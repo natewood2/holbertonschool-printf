@@ -9,6 +9,14 @@
  */
 int print_percent(const char *format, va_list arg)
 {
-	_putchar(37);
-	return (1);
+	if (*format != 0)
+	{
+		_putchar(37);
+		return (1);
+	}
+	else
+	{
+		va_arg(arg, char *);
+		return (0);
+	}
 }
