@@ -32,7 +32,8 @@ int _printf(const char *format, ...)
 		}
 		else if (op == NULL)
 		{
-			break;
+			format++;
+			continue;
 		}
 		else
 		{
