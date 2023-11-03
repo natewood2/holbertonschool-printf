@@ -33,7 +33,6 @@ int _printf(const char *format, ...)
 		else if (op == NULL)
 		{
 			format++;
-			continue;
 		}
 		else
 		{
