@@ -7,7 +7,6 @@
 #include <stdarg.h>
 #include <string.h>
 
-int _putchar(char c);
 int print_char(const char *format, va_list arg);
 int print_string(const char *format, va_list arg);
 int print_percent(const char *format, va_list arg);
@@ -17,7 +16,7 @@ int (*get_funct(const char *s))(const char *format, va_list arg);
 int get_int(const char *format, va_list arg);
 int get_unsigned_int(const char *format, va_list arg);
 void _printf(const char *format, ...);
-
+int _putchar(char c);
 
 /**
  * struct my_printf - struct op
@@ -33,5 +32,5 @@ typedef struct my_printf
 
 } my_printf;
 
-#endif
 
+#endif
