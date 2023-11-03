@@ -9,7 +9,6 @@ In this project we are recreating the printf(). The printf() is used to format a
 - David Meddaugh [[@meddizzle316](https://www.github.com/meddizzle316)]
 - Joshua Lewis [[@joshualewis0124](https://www.github.com/joshualewis0124)]
 
-
 ## Specifiers
 These are the specific characters we are looking for and when they are found our program will out put the result.
 #### 
@@ -34,3 +33,13 @@ These are the specific characters we are looking for and when they are found our
 | `print_unsigned_int.c` | Prints unsigned integers|
 | `print_percent.c` | Prints percent|
 
+## Testing Our Function
+
+
+
+```bash
+  _printf
+```
+## Access Manpage
+```bash
+    man _printf
