@@ -13,7 +13,7 @@ void print_int(int n)
 int a;
 
 a = 0;
-if (n < 0)
+if (n < -9)
 {
 	_putchar('-');
 	a = n / 10;
@@ -21,6 +21,11 @@ if (n < 0)
 	a *= -1;
 	n *= -1;
 	print_int(a);
+}
+else if (n < 0)
+{
+	_putchar('-');
+	n *= -1;
 }
 if (n > 9)
 {
