@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	}
 	while (*format != '\0')
 	{
-		if (*format == '%')
+		if (*format == '%' && get_funct(1 + format) != NULL)
 		{
 			format++;
 			op = get_funct(format);
@@ -29,6 +29,10 @@ int _printf(const char *format, ...)
 			{
 				result += op(format, arg);
 			}
+		}
+		else if (*format == '%' && *(1 + format) == '\0')
+		{
+			return (-1);
 		}
 		else
 		{

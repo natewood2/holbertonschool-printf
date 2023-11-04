@@ -12,7 +12,10 @@ int print_string(const char *format, va_list arg)
 	char *s;
 
 	s = va_arg(arg, char *);
-
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
 	for (i = 0; s[i] != '\0' && *format != 0; i++)
 	{
 		_putchar(s[i]);
