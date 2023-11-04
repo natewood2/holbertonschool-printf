@@ -6,23 +6,29 @@
 /**
  * print_int- prints a signed integer.
  * @n: the integer to be printed.
- * @count: the number of characters printed.
- * Return: the result of temp multiplied by the size of an int(4)
+ * Return: nothing
  */
-int print_int(int n, int count)
+void print_int(int n)
 {
-int a, temp;
+int a;
 
-temp = count;
+a = 0;
+if (n < 0)
+{
+	_putchar('-');
+	a = n / 10;
+	n -= 10 * a;
+	a *= -1;
+	n *= -1;
+	print_int(a);
+}
 if (n > 9)
 {
 	a = n / 10;
 	n -= 10 * a;
-	temp++;
-	print_int(a, temp);
+	print_int(a);
 }
 _putchar('0' + n);
-return (temp * 4);
 }
 
 
@@ -56,21 +62,25 @@ int print_unsigned_int(unsigned int n, unsigned int count)
  */
 int get_int(const char *format, va_list arg)
 {
-int n, result;
+int n, x, length;
 
 n = va_arg(arg, int);
-result = 0;
-if (n < 0 && *format != 0)
+length = 0;
+x = n;
+if (x < 0 || x == 0)
 {
-	n *= -1;
-	putchar(45);
-	result = print_int(n, 0);
+	length++;
 }
-else if (*format != 0)
+while (x != 0)
 {
-	result = print_int(n, 0);
+	x /= 10;
+	++length;
 }
-return (result);
+if (*format != 0)
+{
+	print_int(n);
+}
+return (length);
 }
 
 /**
