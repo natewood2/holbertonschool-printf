@@ -43,3 +43,22 @@ These are the specific characters we are looking for and when they are found our
 ## Access Manpage
 ```bash
     man _printf
+```
+
+## How '_printf' Works:
+
+#### Initialization:
+
+- The function starts by initializing a function pointer op to determine the right operation for format specifiers. It also initializes the variable result to count the number of bytes printed.
+
+#### Handling NULL Input:
+
+- If the provided format string is NULL, the function exits with a status of 98.
+
+#### Processing the Format String: 
+
+- The function processes the format string character by character. 
+  - If it encounters a % followed by a valid format specifier (determined by the get_funct function), it uses the corresponding function (op) to print the argument in the desired format. The number of bytes printed is added to result.
+
+#### Return:
+- The function returns the total number of bytes printed.
