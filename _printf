@@ -4,7 +4,24 @@
 .Nm _printf(),
 .Nm ./printf,
 .Sh SYNOPSIS
-A custom printf() function that fuctions as the regular print().
+Our custom _printf() function that fuctions the same as the regular printf().
+.Sh Syntax Example
+int main() 
+.Sh
+{
+
+int value = 123;
+.Sh
+    _printf("The value is %d\n", value);
+.Sh
+return 0;
+
+}
+
+.Sh
+Using %d to print a positive integer
+.Sh
+Output: The value is 123
 .Sh DESCRIPTION 
 The _printf function is a custom version of printf. It prints the string from the
 'format' argument to the standard output. The string can include plain characters
@@ -22,18 +39,38 @@ integers, it will output any unsigned integer that it is assigned to.
 .Sh
 If our program encounters '%i', since '%i' is a format secifier for signed integers
 , it will output any signed integers that it is assigned to.
+.Sh Conversion Specifiers
+'%c' : The print_char function outputs a single character from a va_list
+and returns the number of characters printed, which is always one, unless the 
+format string ends before the character, in which case it returns zero.
+.Sh
+'%s' : The print_string function prints each character of a string passed through a va_list.
+If the string is NULL, it prints "(null)". It uses _putchar to print characters one by one 
+until it reaches the string's end, and returns the count of characters printed. This count
+does not include the null terminator of the string.
+.Sh
+'%i' and '%d' : The _printf function's %d and %i specifiers print signed decimal integers. Upon 
+encountering either specifier, _printf calls get_int, which fetches the next integer
+argument and calculates the print length. If the integer is negative, get_int accounts for the
+minus sign in the length. The print_int function is then invoked to output the integer's digits
+recursively, handling negative values by printing a minus sign and then proceeding with the
+absolute value. Digits are printed in sequence until the entire number is outputted. The total count
+of printed characters, including the minus sign for negative numbers, is returned by get_int.
+.Sh Return Value
+When these functions complete successfully, they return the count of characters that have been
+printed, not including the null terminator. Should there be an error during output, they return a negative number.
 .Sh Notes
  This function requires the definition of several other functions like get_funct() and
     _putchar() to work correctly. The behavior for various format specifiers is determined by the
     get_funct() function.
 .Sh Examples
- _printf("Hello, World!");
+_printf("Hello, World!");
         This will print "Hello, world!"
 .Sh
-    _printf("%i", 10000);
+ _printf("%i", 10000);
         This will print "10000".
 .Sh
-    _printf("%c", 'S');
+_printf("%c", 'S');
         This will print "S".
 .Sh Authors
-Nathan Wood, David Meddaugh, and Joshua Lewis.
+David Meddaugh and Nathan Wood
