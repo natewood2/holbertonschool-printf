@@ -11,12 +11,12 @@ int print_percent(const char *format, va_list arg)
 {
 	if (*format != 0)
 	{
-		_putchar(37);
-		return (1);
+		_putchar(37); /* Ascii value for % */
+		return (1); /* returns bytes printed */
 	}
 	else
 	{
-		va_arg(arg, char *);
+		va_arg(arg, char *); /* removing unused variable error */
 		return (0);
 	}
 }
