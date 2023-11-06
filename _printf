@@ -1,0 +1,39 @@
+.Dd 10/07/2023 
+.Dt _printf 
+.Sh Our _printf()   
+.Nm _printf(),
+.Nm ./printf,
+.Sh SYNOPSIS
+A custom printf() function that fuctions the as the regular print().
+.Sh DESCRIPTION 
+The _printf function is a custom version of printf. It prints the string from the
+'format' argument to the standard output. The string can include plain characters
+and special format specifiers that begin with '%'.
+.Sh
+When encountering a '%' character, _printf fetches the corresponding argument
+from the variable list and prints it based on the format specifier.
+.Sh
+If our program encounters '%c' it will then output that character.
+.Sh
+If our program encounters '%s' it will then output the string.
+.Sh
+If our program encounters '%d', since '%d' is a format specifier for unsigned
+integers, it will output any unsigned integer that it is assigned to.
+.Sh
+If our program encounters '%i', since '%i' is a format secifier for signed integers
+, it will output any signed integers that it is assigned to.
+.Sh Notes
+ This function requires the definition of several other functions like get_funct() and
+    _putchar() to work correctly. The behavior for various format specifiers is determined by the
+    get_funct() function.
+.Sh Examples
+ _printf("Hello, %s!\n", "world");
+        This will print "Hello, world!" followed by a newline.
+.Sh
+    _printf("Age: %d\n", 25);
+        This will print "Age: 25" followed by a newline.
+.Sh
+    _printf("Hello %");
+        This will return -1 since there's an unmatched '%' character.
+.Sh Authors
+Nathan Wood, David Meddaugh, and Joshua Lewis.
