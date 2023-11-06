@@ -15,7 +15,7 @@ int (*get_funct(const char *s))(const char *format, va_list arg)
 		{"s", print_string},
 		{"%", print_percent},
 		{"d", get_int},
-		{"i", get_unsigned_int},
+		{"i", get_int},
 		{"0", NULL}
 	};
 
