@@ -16,12 +16,13 @@ int (*get_funct(const char *s))(const char *format, va_list arg)
 		{"%", print_percent},
 		{"d", get_int},
 		{"i", get_int},
+		{"b", get_bin},
 		{"0", NULL}
 	};
 	/* array of function pointers with matching char *; a dictionary */
 
 	i = 0; /* setting i to 0 */
-	size = 5; /* setting size to size of above array */
+	size = 6; /* setting size to size of above array */
 
 	while ((p[i].op[0]) != s[0] && i < size)
 		i++;

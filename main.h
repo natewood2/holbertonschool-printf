@@ -15,6 +15,9 @@ int (*get_funct(const char *s))(const char *format, va_list arg);
 int get_int(const char *format, va_list arg);
 int _printf(const char *format, ...);
 int _putchar(char c);
+int print_bin(int n);
+int get_bin(const char *format, va_list arg);
+int convert_bin(int n);
 
 /**
  * struct my_printf - struct op
