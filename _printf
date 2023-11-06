@@ -64,13 +64,13 @@ printed, not including the null terminator. Should there be an error during outp
     _putchar() to work correctly. The behavior for various format specifiers is determined by the
     get_funct() function.
 .Sh Examples
- _printf("Hello, %s!\n", "world");
-        This will print "Hello, world!" followed by a newline.
+_printf("Hello, World!");
+        This will print "Hello, world!"
 .Sh
-    _printf("Age: %d\n", 25);
-        This will print "Age: 25" followed by a newline.
+ _printf("%i", 10000);
+        This will print "10000".
 .Sh
-    _printf("Hello %");
-        This will return -1 since there's an unmatched '%' character.
+_printf("%c", 'S');
+        This will print "S".
 .Sh Authors
 David Meddaugh and Nathan Wood
