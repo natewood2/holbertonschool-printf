@@ -4,7 +4,7 @@
 .Nm _printf(),
 .Nm ./printf,
 .Sh SYNOPSIS
-A custom printf() function that fuctions the as the regular print().
+A custom printf() function that fuctions as the regular print().
 .Sh DESCRIPTION 
 The _printf function is a custom version of printf. It prints the string from the
 'format' argument to the standard output. The string can include plain characters
@@ -27,13 +27,13 @@ If our program encounters '%i', since '%i' is a format secifier for signed integ
     _putchar() to work correctly. The behavior for various format specifiers is determined by the
     get_funct() function.
 .Sh Examples
- _printf("Hello, %s!\n", "world");
-        This will print "Hello, world!" followed by a newline.
+ _printf("Hello, World!");
+        This will print "Hello, world!"
 .Sh
-    _printf("Age: %d\n", 25);
-        This will print "Age: 25" followed by a newline.
+    _printf("%i", 10000);
+        This will print "10000".
 .Sh
-    _printf("Hello %");
-        This will return -1 since there's an unmatched '%' character.
+    _printf("%c", 'S');
+        This will print "S".
 .Sh Authors
 Nathan Wood, David Meddaugh, and Joshua Lewis.
