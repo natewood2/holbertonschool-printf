@@ -11,10 +11,8 @@ int print_char(const char *format, va_list arg);
 int print_string(const char *format, va_list arg);
 int print_percent(const char *format, va_list arg);
 void print_int(int n);
-int print_unsigned_int(unsigned int n, unsigned int count);
 int (*get_funct(const char *s))(const char *format, va_list arg);
 int get_int(const char *format, va_list arg);
-int get_unsigned_int(const char *format, va_list arg);
 int _printf(const char *format, ...);
 int _putchar(char c);
 
