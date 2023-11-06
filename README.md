@@ -45,6 +45,8 @@ These are the specific characters we are looking for and when they are found our
     man _printf
 ```
 
+## How '_printf' Works:
+
 #### Initialization:
 
 - The function starts by initializing a function pointer op to determine the right operation for format specifiers. It also initializes the variable result to count the number of bytes printed.
