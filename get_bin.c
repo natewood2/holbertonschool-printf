@@ -3,11 +3,12 @@
  * get_bin - retrieves int value, converts to binary, prints, and returns bytes
  * @format: string that includes the format
  * @arg: arguments from which int value is pulled
+ * Return: returns amount of bytes printed
  */
 int get_bin(const char *format, va_list arg)
 {
 	int n, length;
-	
+
 	n = va_arg(arg, int);
 	length = 0;
 	if (*format != 0)
