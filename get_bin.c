@@ -13,7 +13,7 @@ int get_bin(const char *format, va_list arg)
 
 	i = 0;
 	n = va_arg(arg, int);
-	
+
 	if (*format != 0)
 	{
 		while (n > 0)
