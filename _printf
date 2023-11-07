@@ -22,24 +22,7 @@ return 0;
 Using %d to print a positive integer
 .Sh
 Output: The value is 123
-.Sh DESCRIPTION 
-The _printf function is a custom version of printf. It prints the string from the
-'format' argument to the standard output. The string can include plain characters
-and special format specifiers that begin with '%'.
-.Sh
-When encountering a '%' character, _printf fetches the corresponding argument
-from the variable list and prints it based on the format specifier.
-.Sh
-If our program encounters '%c' it will then output that character.
-.Sh
-If our program encounters '%s' it will then output the string.
-.Sh
-If our program encounters '%d', since '%d' is a format specifier for unsigned
-integers, it will output any unsigned integer that it is assigned to.
-.Sh
-If our program encounters '%i', since '%i' is a format secifier for signed integers
-, it will output any signed integers that it is assigned to.
-.Sh Conversion Specifiers
+.Sh Description
 '%c' : The print_char function outputs a single character from a va_list
 and returns the number of characters printed, which is always one, unless the 
 format string ends before the character, in which case it returns zero.
@@ -56,6 +39,23 @@ minus sign in the length. The print_int function is then invoked to output the i
 recursively, handling negative values by printing a minus sign and then proceeding with the
 absolute value. Digits are printed in sequence until the entire number is outputted. The total count
 of printed characters, including the minus sign for negative numbers, is returned by get_int.
+.Sh Conversion Specifiers 
+The _printf function is a custom version of printf. It prints the string from the
+'format' argument to the standard output. The string can include plain characters
+and special format specifiers that begin with '%'.
+.Sh
+When encountering a '%' character, _printf fetches the corresponding argument
+from the variable list and prints it based on the format specifier.
+.Sh
+If our program encounters '%c' it will then output that character.
+.Sh
+If our program encounters '%s' it will then output the string.
+.Sh
+If our program encounters '%d', since '%d' is a format specifier for unsigned
+integers, it will output any unsigned integer that it is assigned to.
+.Sh
+If our program encounters '%i', since '%i' is a format secifier for signed integers
+, it will output any signed integers that it is assigned to.
 .Sh Return Value
 When these functions complete successfully, they return the count of characters that have been
 printed, not including the null terminator. Should there be an error during output, they return a negative number.
