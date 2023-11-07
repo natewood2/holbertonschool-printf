@@ -14,7 +14,12 @@ int get_bin(const char *format, va_list arg)
 	i = 0;
 	n = va_arg(arg, int);
 
-	if (*format != 0)
+	if (n == 0) /* case if n is 0 */
+	{
+		_putchar(n);
+		return(1);
+	}
+	else if (*format != 0)
 	{
 		while (n > 0)
 		{
