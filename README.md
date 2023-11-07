@@ -62,3 +62,6 @@ These are the specific characters we are looking for and when they are found our
 
 #### Return:
 - The function returns the total number of bytes printed.
+
+#### Flowchart
+![image](https://github.com/natewood2/holbertonschool-printf/assets/143881431/118ba42b-ccba-4ba8-8537-c1985469366e)
