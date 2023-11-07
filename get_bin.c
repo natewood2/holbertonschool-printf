@@ -7,14 +7,35 @@
  */
 int get_bin(const char *format, va_list arg)
 {
-	int n, length;
+	int n, i, j, temp;
+	int binaryNum[32];
+	/* Array to store binary number */
 
+	i = 0;
 	n = va_arg(arg, int);
-	length = 0;
+	
 	if (*format != 0)
 	{
-		n = convert_bin(n); /* converts n to bin with helper function */
-		length = print_bin(n); /* prints n with helper function */
+		while (n > 0)
+		{
+			/* storing remainder in binary array */
+			binaryNum[i] = n % 2;
+			n = n / 2;
+			i++;
+		}
+
+		/* Reverse the array */
+		for (j = 0; j < i / 2; j++)
+		{
+			temp = binaryNum[j];
+			binaryNum[j] = binaryNum[i - j - 1];
+			binaryNum[i - j - 1] = temp;
+		}
+		/* printing binary array */
+		for (j = 0; j < i; j++)
+		{
+			_putchar('0' + binaryNum[j]);
+		}
 	}
-	return (length); /* returns amount of bytes printed */
+	return (i);
 }
