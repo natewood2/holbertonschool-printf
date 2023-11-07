@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * print_int- prints a signed integer.
+ * print_int- recursive function; prints a signed integer.
  * @n: the integer to be printed.
  * Return: nothing
  */
@@ -15,6 +15,12 @@ int a;
 a = 0;
 if (n < -9)
 {
+	/**
+	 * for double digit negative numbers we print the negative sign
+	 * then remove the last digit from n (storing that value in a) and rename n
+	 * to be that last digit then we make both a and n positive and then
+	 * recursively call print_int with the positive 'a'
+	 */
 	_putchar('-');
 	a = n / 10;
 	n -= 10 * a;
@@ -24,40 +30,25 @@ if (n < -9)
 }
 else if (n < 0)
 {
+	/* single digit negative numbers; print negative; then absolute value of n */
 	_putchar('-');
 	n *= -1;
 }
 if (n > 9)
 {
+	/**
+	 * the star of the show, takes all double digit positive number, removes last
+	 * digit from n (stores that value in a)
+	 * redefines n as the last digit and then recursively calls print_int with
+	 * new value 'a'
+	 */
 	a = n / 10;
 	n -= 10 * a;
 	print_int(a);
 }
-_putchar('0' + n);
+_putchar('0' + n); /* prints n; effective base case of n < 9 && n > 0 */
 }
 
-
-/**
- * print_unsigned_int - prints an unsigned integer
- * @n: the integer to be printed.
- * @count: the number of characters printed.
- * Return: the result of temp multiplied by the size of an int(4)
- */
-int print_unsigned_int(unsigned int n, unsigned int count)
-{
-	unsigned int a, temp;
-
-	temp = count;
-	if (n > 9)
-	{
-		a = n / 10;
-		n -= 10 * a;
-		temp++;
-		print_unsigned_int(a, temp);
-	}
-	putchar('0' + n);
-	return (temp * 4);
-}
 
 /**
  * get_int - pass n to another function which will print it
@@ -69,40 +60,21 @@ int get_int(const char *format, va_list arg)
 {
 int n, x, length;
 
-n = va_arg(arg, int);
+n = va_arg(arg, int); /* gets next int value from args, storing in n */
 length = 0;
-x = n;
+x = n; /* creating "copy" of n */
 if (x < 0 || x == 0)
 {
-	length++;
+	length++; /* adding to length for '-' and if n = 0 */
 }
 while (x != 0)
 {
 	x /= 10;
-	++length;
+	++length; /* finding how many digits n has through copy x */
 }
 if (*format != 0)
 {
-	print_int(n);
+	print_int(n); /* calls print_int and passes n */
 }
-return (length);
-}
-
-/**
- * get_unsigned_int - gets unsigned int and sends it to print_int
- * @format: a placeholder for format
- * @arg: VA_list containing the argument
- * Return: the amount of bytes that are printed
- */
-int get_unsigned_int(const char *format, va_list arg)
-{
-	unsigned int n, result;
-
-	result = 0;
-	if (*format != 0)
-	{
-		n = va_arg(arg, unsigned int);
-		result = print_unsigned_int(n, 0);
-	}
-	return (result);
+return (length); /* returns length as the amount of bytes printed */
 }
