@@ -1,4 +1,4 @@
-# Printf()
+# _printf()
 
 In this project we are recreating the printf(). The printf() is used to format and print a series of characters and values to the standard output. We are tasked with recreating the function. We are not allowed to use 'switch' statements. 
 
@@ -7,7 +7,6 @@ In this project we are recreating the printf(). The printf() is used to format a
 
 - Nathan Wood [[@natewood2](https://www.github.com/natewood2)]
 - David Meddaugh [[@meddizzle316](https://www.github.com/meddizzle316)]
-- Joshua Lewis [[@joshualewis0124](https://www.github.com/joshualewis0124)]
 
 ## Specifiers
 These are the specific characters we are looking for and when they are found our program will out put the result.
@@ -38,7 +37,7 @@ These are the specific characters we are looking for and when they are found our
 
 
 ```bash
-  _printf
+  _printf("Hello World!");
 ```
 ## Access Manpage
 ```bash
@@ -62,3 +61,6 @@ These are the specific characters we are looking for and when they are found our
 
 #### Return:
 - The function returns the total number of bytes printed.
+
+#### Flowchart
+![image](https://github.com/natewood2/holbertonschool-printf/assets/143881431/118ba42b-ccba-4ba8-8537-c1985469366e)
